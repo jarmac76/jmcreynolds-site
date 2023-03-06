@@ -1,24 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+class McreynoldsApp extends React.Component {
+  render() {
+    const title = "Jared McReynolds Site";
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <div>
+       <Header></Header>
+       <Content></Content> 
+       <Footer></Footer>
+      </div>
+    );
+  }
 }
 
-export default App;
+class Header extends React.Component{
+  render() {
+    return (
+      <div>
+        <figure class="logo-image">
+          <img src="./images/Logo1.png" alt="JM logo"></img>
+        </figure>
+      </div>
+    );
+  }
+}
+
+class Content extends React.Component {
+  render() {
+    return(
+      <div></div>
+    );
+  }
+}
+
+class Footer extends React.Component {
+  render() {
+    return (
+      <div>
+        <p>@2022</p> 
+      </div>      
+    );
+  }
+}
+
+ReactDOM.render(<McreynoldsApp />, document.getElementById('app'));
