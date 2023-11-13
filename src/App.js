@@ -1,45 +1,28 @@
-class McreynoldsApp extends React.Component {
-  render() {
-    const title = "Jared McReynolds Site";
+import "./App.css";
+import Header from "./header";
+import Footer from "./footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./pages/about-us";
+import Skills from "./pages/skills";
+import Resume from "./pages/resume";
+import Blog from "./pages/blog";
+import Home from "./pages/home";
 
-    return (
-      <div>
-       <Header></Header>
-       <Content></Content> 
-       <Footer></Footer>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
+  );
 }
-
-class Header extends React.Component{
-  render() {
-    return (
-      <div>
-        <figure class="logo-image">
-          <img src="./images/Logo1.png" alt="JM logo"></img>
-        </figure>
-      </div>
-    );
-  }
-}
-
-class Content extends React.Component {
-  render() {
-    return(
-      <div></div>
-    );
-  }
-}
-
-class Footer extends React.Component {
-  render() {
-    return (
-      <div>
-        <p>@2022</p> 
-      </div>      
-    );
-  }
-}
-
-ReactDOM.render(<McreynoldsApp />, document.getElementById('app'));
+export default App;
