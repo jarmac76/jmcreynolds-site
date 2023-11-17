@@ -37,7 +37,7 @@ body {
 }
 
 .header-band,
-.nav-band {
+.nav-band-desktop {
   display: flex;
   width: 100%;
   text-align: center;
@@ -75,7 +75,7 @@ nav {
 
 .navItem {
   padding: 5px 20px;
-  font-size: 24px;
+  font-size: 65px;
   color: #fff;
 }
 
@@ -84,10 +84,60 @@ nav {
   text-decoration: none;
 }
 
+.nav-button {
+  display: none;
+}
+
+.nav-panel {
+  position: absolute;
+    left: 36%;
+    top: 100px;
+}
+
+@media (min-width: 900px) {
+  .nav-band-desktop {
+    display: none;
+  }
+
+  .nav-band-mobile {
+    display: block;
+  }
+
+  .nav-button {
+    display: flex;
+    justify-content: right;
+    padding-right: 26px;
+    z-index: 10000;
+  }
+
+  .hamburger-react {
+    margin-right: 20px;
+  }
+
+  .overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+  }
+}
+
 /************** Content Element Styles ***************/
 .main-band {
   background-color: #000;
-  display: block;
+  display: grid;
+  height: 80%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "main1 main1"
+    "main2a main2b";
 }
 
 .main1 {
@@ -95,24 +145,25 @@ nav {
   color: #fff;
   text-align: center;
   margin: auto;
-  width: 100%;
-}
-
-.main2 {
-  display: flex;
+  grid-area: main1;
 }
 
 .main2a {
-  flex: 1;
+  flex: 1 0 0;
+  text-align: center;
+  padding: 5% 10%;
+  font-size: 25px;
+  grid-area: main2a;
 }
 
 .main2b {
-  margin-right: 15%;
+  grid-area: main2b;
 }
 
 .main2b img {
   border: 10px #858585 solid;
   border-radius: 50%;
+  margin-left: 20%;
 }
 
 .home-title {
@@ -153,6 +204,6 @@ nav {
   color: #858585;
   text-align: right;
 }
- .icon:hover {
-    opacity: 0.5;
- }
+.icon:hover {
+  opacity: 0.5;
+}

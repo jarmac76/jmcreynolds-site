@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const NavbarDesktop = () => {
     return (
-        <nav>
+        <nav className="nav-list">
             <div className="navItem">
                 <Link to="/">Home</Link>
             </div>
@@ -22,4 +22,5 @@ const Navbar = () => {
     )
 }
 
-export default Navbar;
+export default NavbarDesktop;
+

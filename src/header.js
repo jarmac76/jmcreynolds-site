@@ -1,6 +1,11 @@
-import Navbar from "./menu";
+import NavbarDesktop from "./menuDesktop";
+import NavbarModile from "./menuMoblie";
+import { useState } from "react";
 
 const Header = (props) => {
+
+  
+
   return (
     <div className="header">
       <div className="header-band">
@@ -13,8 +18,11 @@ const Header = (props) => {
           </div>
         </div>
       </div>
-      <div className="nav-band">
-        <Navbar />
+      <div className="nav-band-desktop">
+        <NavbarDesktop />
+      </div>
+      <div className="nav-band-mobile">
+        <NavbarModile menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       </div>
     </div>
   );
