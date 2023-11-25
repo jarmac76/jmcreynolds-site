@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const Header = (props) => {
 
-  
+
 
   return (
     <div className="header">
@@ -17,12 +17,12 @@ const Header = (props) => {
             <h2>Jared McReynolds</h2>
           </div>
         </div>
-      </div>
-      <div className="nav-band-desktop">
-        <NavbarDesktop />
-      </div>
-      <div className="nav-band-mobile">
-        <NavbarModile menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        <div className="nav-band-desktop">
+          <NavbarDesktop />
+        </div>
+        <div className="nav-band-mobile">
+          <NavbarModile />
+        </div>
       </div>
     </div>
   );
