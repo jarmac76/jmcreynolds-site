@@ -1,9 +1,9 @@
 import "./App.css";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./components/header";
+import Footer from "./components/footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/about-us";
-import Skills from "./pages/skills";
+import Skills from "./pages/Skills";
 import Resume from "./pages/resume";
 import Blog from "./pages/blog";
 import Home from "./pages/home";
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/skills" element={<Skills />} />
+          <Route path="/Skills" element={<Skills />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>

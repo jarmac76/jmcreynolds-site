@@ -1,6 +1,5 @@
 import NavbarDesktop from "./menuDesktop";
 import NavbarModile from "./menuMoblie";
-import { useState } from "react";
 
 const Header = (props) => {
 
@@ -11,7 +10,7 @@ const Header = (props) => {
       <div className="header-band">
         <div className="logo-band">
           <figure className="logo-image">
-            <img src="../images/Logo1.png" alt="JM logo"></img>
+            <img src="/assets/images/Logo1.png" alt="JM logo"></img>
           </figure>
           <div className="name-title">
             <h2>Jared McReynolds</h2>

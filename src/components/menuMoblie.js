@@ -4,7 +4,6 @@ import { Divide as Hamburger } from "hamburger-react";
 
 const NavbarModile = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  let overlay = '';
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -28,7 +27,7 @@ return (
           <Link to="/skills">Skills</Link>
         </div>
         <div className="navItem">
-          <Link to="/resume">Resume</Link>
+          <Link to="/resume">Experience</Link>
         </div>
         <div className="navItem">
           <Link to="https://jsmcreynolds.wordpress.com/">Blog</Link>

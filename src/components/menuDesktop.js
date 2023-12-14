@@ -13,7 +13,7 @@ const NavbarDesktop = () => {
                 <Link to="/skills">Skills</Link>
             </div>
             <div className="desktopNavItem">
-                <Link to="/resume">Resume</Link>
+                <Link to="/resume">Experience</Link>
             </div>
             <div className="desktopNavItem">
                 <Link to="https://jsmcreynolds.wordpress.com/">Blog</Link>

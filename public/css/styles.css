@@ -1,23 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
 /*font-family: 'Bungee Inline', sans-serif;*/
 
-html,
-body {
+html {
   height: 100%;
+  box-sizing: border-box;
 }
+
 body {
   background-color: #000;
   color: #fff;
   display: flex;
-  margin: auto;
   align-items: stretch;
+  min-height: 100%;
+  position: relative;
+  margin: 0;
+  box-sizing: inherit;
 }
 
 #root {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -31,7 +34,6 @@ body {
   max-height: 220px;
   width: 100%;
   text-align: center;
-  margin: auto;
   background-color: #000;
   border-bottom: 1px solid #fff;
 
@@ -169,20 +171,14 @@ nav {
     background-color: rgba(0, 0, 0, 0.75);
     cursor: pointer;
   }
+
+
 }
 
 /************** Content Element Styles ***************/
 .main-band {
   background-color: #000;
-  display: grid;
-  height: 80%;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "main1 main1"
-    "main2a main2b";
-  top: 15%;
-  position: absolute;
+  margin-top: 97px;
 }
 
 .main1 {
@@ -190,25 +186,34 @@ nav {
   color: #fff;
   text-align: center;
   margin: auto;
-  grid-area: main1;
+  display: flex;
+  justify-content: center;
 }
 
+.main2-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.main2-container > * {
+  flex: 1 100%;
+}
 .main2a {
-  flex: 1 0 0;
   text-align: center;
   padding: 5% 10%;
   font-size: 25px;
-  grid-area: main2a;
+  order: 1;
 }
 
 .main2b {
-  grid-area: main2b;
+  order: 2
 }
 
 .main2b img {
   border: 10px #858585 solid;
   border-radius: 50%;
-  margin-left: 20%;
+  margin-left: 10%;
 }
 
 .home-title {
@@ -219,6 +224,31 @@ nav {
   text-align: center;
 }
 
+@media (max-width: 1000px) {
+  
+  .main2-container {
+    flex-wrap: wrap;
+  }
+  .main2a {
+    order: 2;
+  }
+
+  .main2b {
+    order: 1;
+    text-align: center;
+  }
+
+  .main2b img {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .home-title {
+    font-size: 65px;
+  }
+}
+
 /*************** Footer Styles *******************/
 
 .footer p {
@@ -227,8 +257,7 @@ nav {
 }
 
 .footer-band {
-  position: fixed;
-  bottom: 0;
+ 
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -237,7 +266,9 @@ nav {
   box-sizing: border-box;
   text-align: center;
   background-color: #000;
+  margin-top: auto;
 }
+
 
 .footer1 a {
   margin-right: 20px;
@@ -249,4 +280,25 @@ nav {
 }
 .icon:hover {
   opacity: 0.5;
+}
+
+@media (max-width: 623px) {
+  .footer-band > * {
+    flex: 1 100%;
+  }
+  .footer1, .footer2 {
+    text-align: center;
+  }
+}
+
+/*********** Skills page ***************/
+
+.skill-band {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.skill-item {
+  padding: 20px 20px;
 }
