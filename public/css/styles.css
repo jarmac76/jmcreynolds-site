@@ -305,68 +305,123 @@ nav {
 
 /************** About page **************/
 
-.timeline {
+.timeline-outer {
   display: flex;
   flex-direction: column;
 }
 
-.timeRow {
-  display: flex;
-  flex-direction: row;
-}
-
-.blank {
-  width: 20%;
-}
-
-.timeContainer1 {
-  width: 30%;
-  padding: 20px 30px;
-}
-
-.timeContainer2 {
-  width: 30%;
-  padding: 20px 30px;
-}
-
-.timeContainer3 {
-  width: 30%;
-  padding: 20px 30px;
-}
-
-.timeContainer4 {
-  width: 30%;
-  padding: 20px 30px;
-}
-
-.timeContainer5 {
-  width: 30%;
-  padding: 20px 30px;
-}
-
-.timeContainer6 {
-  width: 30%;
-  padding: 20px 30px;
-}
-.blank1 {
-  width: 20%;
-}
-
-.blank2 {
-  width: 20%;
+.timeBox {
+  position: relative;
+  max-width: 800px; 
 }
 
 .timeContent {
   background-color: white;
   border-radius: 16px;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
 }
 
 .timeContent h2 {
   color: black;
   padding: 10px 20px;
+  margin: 0;
+}
+
+.timeContent p {
+  color: black;
+  padding: 0 20px 20px 20px;
+  margin: 0;
 }
 
 .timeline {
   padding-top: 20px;
+  margin: 20px auto;
 }
+
+.timeBox:nth-child(odd) {
+  padding: 30px 0 30px 30px;
+}
+.timeBox:nth-child(even) {
+  padding: 30px 30px 30px 0;
+}
+/* Global ::before */
+.timeBox::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  border: solid #858585;
+}
+
+/* Setting the border of top, bottom, left */
+.timeBox:nth-child(odd)::before {
+  left: 0px;
+  top: -4.5px;
+  bottom: -4.5px;
+  border-width: 5px 0 5px 5px;
+  border-radius: 50px 0 0 50px;
+}
+
+/* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+@media only screen and (max-width: 400px) {
+  .timeBox:nth-child(odd)::before {
+    top: -5px;
+    bottom: -5px;
+  }
+}
+
+/* Setting the border of top, bottom, right */
+.timeBox:nth-child(even)::before {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-width: 5px 5px 5px 0;
+  border-radius: 0 50px 50px 0;
+}
+
+/* Removing the border if it is the first timeBox */
+.timeBox:first-child::before {
+  border-top: 0;
+  border-top-left-radius: 0;
+}
+
+/* Removing the border if it is the last timeBox  and it's odd */
+.timeBox:last-child:nth-child(odd)::before {
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Removing the border if it is the last timeBox  and it's even */
+.timeBox:last-child:nth-child(even)::before {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Timeline dot  */
+.timeTitle::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgb(22, 7, 235);
+  border-radius: 999px;
+  border: 3px solid #858585;
+}
+
+/* text right if the timeBox is even  */
+.timeBox:nth-child(even) > .timeContent > .timeTitle {
+  text-align: right;
+}
+
+/* setting dot to the left if the timeBox is odd */
+.timeBox:nth-child(odd) > .timeContent > .timeTitle::before {
+  left: -6px;
+}
+
+/* setting dot to the right if the timeBox is odd */
+.timeBox:nth-child(even) > .timeContent > .timeTitle::before {
+  right: -6px;
+}
+
+
+

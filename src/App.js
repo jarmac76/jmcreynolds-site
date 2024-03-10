@@ -3,7 +3,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/about-us";
-import Skills from "./pages/Skills";
+import Skills from "./pages/skills";
 import Resume from "./pages/resume";
 import Blog from "./pages/blog";
 import Home from "./pages/home";
