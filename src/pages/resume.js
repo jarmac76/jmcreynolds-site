@@ -43,6 +43,7 @@ const Resume = () => {
                </div>
             </div>
             <div className="school-band">
+                <h2>Education</h2>
                 <div className="degree-band">
                     <h3>University of Georgia</h3>
                     <h4>Bachelor of Computer Science</h4>
