@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jmcreynolds-site/static/css/main.f855e6bc.css",
+    "main.js": "/jmcreynolds-site/static/js/main.9c3ec2ad.js",
+    "index.html": "/jmcreynolds-site/index.html",
+    "main.f855e6bc.css.map": "/jmcreynolds-site/static/css/main.f855e6bc.css.map",
+    "main.9c3ec2ad.js.map": "/jmcreynolds-site/static/js/main.9c3ec2ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.9c3ec2ad.js"
+  ]
+}
